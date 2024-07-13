@@ -27,6 +27,12 @@ class DiffFileUsingBlock extends StatelessWidget {
             },
             icon: const Icon(Icons.remove),
           ),
+          IconButton(
+            onPressed: () {
+              counterBlock.add(CounterRestart());
+            },
+            icon: const Icon(Icons.restart_alt_outlined),
+          ),
         ],
       ),
     );

@@ -12,11 +12,14 @@ class CounterBloc extends Bloc<CounterEvent, int> {
     );
     //decrement
     on<CounterDecrement>((event, emit) {
+      if (state == 0) {
+        return;
+      }
       emit(state - 1);
     });
     //restart
-    on((event, emit) {
-      emit(state - 0);
+    on<CounterRestart>((event, emit) {
+      emit(0); //passing initial value over here
     });
   }
 }
